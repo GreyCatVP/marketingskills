@@ -1,12 +1,12 @@
 {
-  "name": "marketing-skills",
-  "description": "Marketing skills for AI agents — conversion optimization, copywriting, SEO, paid ads, ad creative, and growth",
+  "name": "gvx-marketing-skills",
+  "description": "GVX Digital marketing skills for AI agents: the general marketing library plus GVX brand voice, client onboarding, local outreach, and launch videos",
   "version": "2.11.26",
   "author": {
-    "name": "Corey Haines"
+    "name": "GVX Digital (fork of Corey Haines marketingskills)"
   },
-  "homepage": "https://github.com/coreyhaines31/marketingskills",
-  "repository": "https://github.com/coreyhaines31/marketingskills",
+  "homepage": "https://github.com/garyvanhorn/marketingskills",
+  "repository": "https://github.com/garyvanhorn/marketingskills",
   "license": "MIT",
   "skills": "./skills"
 }

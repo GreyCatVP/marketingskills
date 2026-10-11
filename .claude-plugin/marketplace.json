@@ -1,18 +1,18 @@
 {
-  "name": "marketingskills",
+  "name": "gvx-marketing-skills",
   "owner": {
-    "name": "Corey Haines",
-    "url": "https://corey.co"
+    "name": "GVX Digital",
+    "url": "https://gvxdigital.com"
   },
   "metadata": {
-    "description": "Marketing skills for AI agents — conversion optimization, copywriting, SEO, paid ads, and growth",
+    "description": "GVX Digital marketing skills for AI agents: SEO, CRO, copywriting, paid, email, outreach, plus GVX brand voice, client onboarding, local outreach, and launch videos",
     "version": "2.11.26",
-    "repository": "https://github.com/coreyhaines31/marketingskills"
+    "repository": "https://github.com/garyvanhorn/marketingskills"
   },
   "plugins": [
     {
-      "name": "marketing-skills",
-      "description": "50 marketing skills for technical marketers and founders: CRO, copywriting, cold email, prospecting, SEO, AI SEO, paid ads, SMS, ad creative, video production, image generation, co-marketing, churn prevention, pricing, referrals, revenue operations, sales enablement, customer research, site architecture, comprehensive AARRR-structured marketing plans, public relations and earned media, offer design, event marketing and webinars, and more",
+      "name": "gvx-marketing-skills",
+      "description": "54 marketing skills: the full general library (CRO, copywriting, cold email, SEO, AI SEO, paid ads, pricing, retention, revenue operations, and more) plus four GVX skills for brand voice, client onboarding, local outreach, and launch videos",
       "source": "./"
     }
   ]

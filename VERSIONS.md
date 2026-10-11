@@ -25,6 +25,10 @@ Current versions of all skills. Agents can compare against local versions to che
 | emails | 2.1.3 | 2026-10-08 |
 | events | 1.0.0 | 2026-08-23 |
 | free-tools | 2.0.1 | 2026-08-23 |
+| gvx-brand-voice | 1.0.0 | 2026-10-11 |
+| gvx-client-onboarding | 1.0.0 | 2026-10-11 |
+| gvx-launch-video | 1.0.0 | 2026-10-11 |
+| gvx-local-outreach | 1.0.0 | 2026-10-11 |
 | image | 2.0.2 | 2026-10-02 |
 | influencer-marketing | 1.1.2 | 2026-10-02 |
 | launch | 2.2.0 | 2026-10-07 |

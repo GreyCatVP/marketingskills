@@ -1,28 +1,19 @@
-# Marketing Skills for AI Agents
+# GVX Marketing Skills
 
-A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
+GVX Digital's own marketing skills for AI agents: 50 general marketing skills plus four GVX skills for brand voice, client onboarding, local outreach, and launch videos. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
 
-Built by [Corey Haines](https://corey.co?ref=marketingskills). Need hands-on help? Check out [Conversion Factory](https://conversionfactory.co?ref=marketingskills) — Corey's agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to [Swipe Files](https://swipefiles.com?ref=marketingskills). Want to get dangerously good at using AI for marketing? Check out [AI Marketing Training](https://conversionfactory.co/offers/ai-marketing-training?ref=marketingskills). Want an autonomous AI agent that uses these skills to be your CMO? Try [Magister](https://magistermarketing.com?ref=marketingskills).
+This is GVX Digital's maintained fork of [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) (MIT, by Corey Haines). The general skills are his work and keep his license. The `gvx-*` skills are GVX's additions. See [Staying current with upstream](#staying-current-with-upstream).
 
-New to the terminal and coding agents? Check out the companion guide [Coding for Marketers](https://codingformarketers.com?ref=marketingskills).
+## GVX skills
 
-Want your agent to read your marketing accounts? Follow the [guided tool connection workflow](tools/SETUP.md) for scoped credentials and a first read-only result.
+| Skill | Use it when |
+|-------|-------------|
+| [gvx-brand-voice](skills/gvx-brand-voice/) | Writing anything for GVX Digital itself |
+| [gvx-client-onboarding](skills/gvx-client-onboarding/) | Starting marketing work for a new or existing client |
+| [gvx-local-outreach](skills/gvx-local-outreach/) | Finding and approaching local prospects (draft-only, founder approves sends) |
+| [gvx-launch-video](skills/gvx-launch-video/) | A site or product ships and needs a launch video and share copy |
 
-**Contributions welcome!** Found a way to improve a skill or have a new one to add? [Open a PR](#contributing).
-
-Run into a problem or have a question? [Open an issue](https://github.com/coreyhaines31/marketingskills/issues) — we're happy to help.
-
-## Partners
-
-The library is free and MIT-licensed. [Verified Partners](tools/REGISTRY.md#verified-partners) fund the work — vetted, disclosed tool integrations, listed alongside the neutral options and never influencing what the core skills recommend. The full rules and boundaries are in [tools/PARTNERS.md](tools/PARTNERS.md). [Become a partner →](https://marketing-skills.com/sponsorship)
-
-<!-- PARTNERS:START -->
-> ◆ **[Converly](https://converly.io?ref=marketingskills)** — *Conversion tracking / attribution.* Server-side conversion tracking that fires when someone submits a form, books a meeting, or starts a chat — passing click IDs and identifiers for Enhanced Conversions (Google) and high EMQ match rates (Meta), across 100+ tools. CLI + MCP so your agent sets it up in minutes. → [Integration guide](tools/integrations/converly.md)
-
-> ◆ **[Ploy](https://ploy.ai?ref=marketingskills)** — *AI website & growth platform.* AI marketing platform built around a hosted website builder — an in-app agent that builds and publishes pages, PloyDB for pages at scale, routing to add pages to an existing site, built-in analytics and visitor identification, and a CLI for coding agents. → [Integration guide](tools/integrations/ploy.md)
-<!-- PARTNERS:END -->
-
-<!-- The Partners block above is generated from partners.json — run `node scripts/sync-partners.mjs` after editing it. -->
+**One context file per business.** Every skill reads `.agents/product-marketing.md` in the folder you are working in. GVX work and each client's work live in separate folders with separate context files, so nothing mixes. `gvx-client-onboarding` sets this up.
 
 ## What are Skills?
 
@@ -92,6 +83,10 @@ See each skill's **Related Skills** section for the full dependency map.
 | [emails](skills/emails/) | When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email... |
 | [events](skills/events/) | When the user wants to plan, run, sponsor, speak at, or get pipeline from events — webinars, conferences, trade shows,... |
 | [free-tools](skills/free-tools/) | When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or... |
+| [gvx-brand-voice](skills/gvx-brand-voice/) | When the user wants copy, positioning, or any customer-facing text for GVX Digital itself (not a client)... |
+| [gvx-client-onboarding](skills/gvx-client-onboarding/) | When the user is taking on a new GVX client or setting up marketing work for an existing client... |
+| [gvx-launch-video](skills/gvx-launch-video/) | When a project, client site, or product ships and the user wants a short launch video with share copy... |
+| [gvx-local-outreach](skills/gvx-local-outreach/) | When the user wants to find local businesses to pitch, qualify prospects, or draft outreach for GVX Digital... |
 | [image](skills/image/) | When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product... |
 | [influencer-marketing](skills/influencer-marketing/) | When the user wants to run influencer, creator, or ambassador partnerships to promote their product — finding and... |
 | [launch](skills/launch/) | When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user... |
@@ -130,13 +125,13 @@ Use [npx skills](https://github.com/vercel-labs/skills) to install skills direct
 
 ```bash
 # Install all skills
-npx skills add coreyhaines31/marketingskills
+npx skills add garyvanhorn/marketingskills
 
 # Install specific skills
-npx skills add coreyhaines31/marketingskills --skill cro copywriting
+npx skills add garyvanhorn/marketingskills --skill cro copywriting
 
 # List available skills
-npx skills add coreyhaines31/marketingskills --list
+npx skills add garyvanhorn/marketingskills --list
 ```
 
 The CLI detects which agents you have installed and asks where to install. For Claude Code it installs into `.claude/skills/`; universal agents share `.agents/skills/`.
@@ -145,7 +140,7 @@ The CLI detects which agents you have installed and asks where to install. For C
 > If you run the command from **inside** an agent session (e.g., asking Claude Code to install the skills for you), the CLI runs non-interactively and may only install to the universal `.agents/skills/` directory, which Claude Code does not read. Pass the agent explicitly:
 >
 > ```bash
-> npx skills add coreyhaines31/marketingskills -a claude-code
+> npx skills add garyvanhorn/marketingskills -a claude-code
 > ```
 
 ### Option 2: Claude Code Plugin
@@ -154,7 +149,7 @@ Install via Claude Code's built-in plugin system:
 
 ```bash
 # Add the marketplace
-/plugin marketplace add coreyhaines31/marketingskills
+/plugin marketplace add garyvanhorn/marketingskills
 
 # Install all marketing skills
 /plugin install marketing-skills
@@ -163,7 +158,7 @@ Install via Claude Code's built-in plugin system:
 > **Note:** `/plugin` is only available in an interactive Claude Code CLI session. It is **not** available in Claude Code on the web, GitHub Actions, or other non-interactive/remote environments — in those cases you'll see `/plugin isn't available in this environment`. Use **Option 1 (`npx skills`)** instead, or the equivalent CLI commands:
 >
 > ```bash
-> claude plugin marketplace add coreyhaines31/marketingskills
+> claude plugin marketplace add garyvanhorn/marketingskills
 > claude plugin install marketing-skills@marketingskills
 > ```
 
@@ -173,7 +168,7 @@ Install via Codex's plugin system:
 
 ```bash
 # Add the marketplace
-codex plugin marketplace add coreyhaines31/marketingskills
+codex plugin marketplace add garyvanhorn/marketingskills
 
 # Then browse and install from inside a Codex session
 /plugins
@@ -186,7 +181,7 @@ Select **marketing-skills** to install all skills. To pick up new releases later
 Clone the entire repo and copy the skills folder:
 
 ```bash
-git clone https://github.com/coreyhaines31/marketingskills.git
+git clone https://github.com/garyvanhorn/marketingskills.git
 cp -r marketingskills/skills/* .agents/skills/
 ```
 
@@ -195,7 +190,7 @@ cp -r marketingskills/skills/* .agents/skills/
 Add as a submodule for easy updates:
 
 ```bash
-git submodule add https://github.com/coreyhaines31/marketingskills.git .agents/marketingskills
+git submodule add https://github.com/garyvanhorn/marketingskills.git .agents/marketingskills
 ```
 
 Then reference skills from `.agents/marketingskills/skills/`.
@@ -212,18 +207,18 @@ Use [SkillKit](https://github.com/rohitg00/skillkit) to install skills across mu
 
 ```bash
 # Install all skills
-npx skillkit install coreyhaines31/marketingskills
+npx skillkit install garyvanhorn/marketingskills
 
 # Install specific skills
-npx skillkit install coreyhaines31/marketingskills --skill cro copywriting
+npx skillkit install garyvanhorn/marketingskills --skill cro copywriting
 
 # List available skills
-npx skillkit install coreyhaines31/marketingskills --list
+npx skillkit install garyvanhorn/marketingskills --list
 ```
 
 ### Option 8: Claude Web Skill ZIPs
 
-Download the desired `<name>-claude-web.zip` from [Releases](https://github.com/coreyhaines31/marketingskills/releases/latest), then use **Customize → Skills → + Create skill → Upload a skill** in Claude. Each archive contains one skill. Account permissions and code execution must allow skills.
+Download the desired `<name>-claude-web.zip` from [Releases](https://github.com/garyvanhorn/marketingskills/releases/latest), then use **Customize → Skills → + Create skill → Upload a skill** in Claude. Each archive contains one skill. Account permissions and code execution must allow skills.
 
 The web-target archive uses an explicitly reviewed shorter description; its instructions and resources are preserved. The attached web manifest lists any skills whose description still needs review; newly created release notes also summarize omissions. Installing a ZIP does not configure local CLIs, MCP servers, credentials, or related skills. See [release packaging and verification](docs/skill-release-packaging.md) for archive contents, source variants, and unverified client limitations.
 
@@ -241,7 +236,7 @@ rm -rf page-cro form-cro \
        signup-flow-cro social-content
 ```
 
-Then reinstall the v2.0 skills via your usual method (e.g., `npx skills add coreyhaines31/marketingskills`).
+Then reinstall the v2.0 skills via your usual method (e.g., `npx skills add garyvanhorn/marketingskills`).
 
 ### Migrate the product marketing context file
 
@@ -375,3 +370,12 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding or improving ski
 <a href="https://vercel.com/open-source-program">
   <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge-2026.svg" />
 </a>
+
+
+## Staying current with upstream
+
+```
+git remote add upstream https://github.com/coreyhaines31/marketingskills.git
+git fetch upstream && git merge upstream/main
+```
+The `gvx-*` skills live in their own folders, so merges rarely conflict.
