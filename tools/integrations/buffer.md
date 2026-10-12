@@ -7,7 +7,7 @@ Social media scheduling, publishing, and analytics platform for managing multipl
 | Integration | Available | Notes |
 |-------------|-----------|-------|
 | API | ✓ | REST API v1 for profiles, updates, scheduling |
-| MCP | - | Not available |
+| MCP | ✓ | Available on all plans, including Free (announced May 2026: https://joel.is/posts/1779817350/) |
 | CLI | ✓ | [buffer.js](../clis/buffer.js) |
 | SDK | - | No official SDK; legacy API still supported |
 
