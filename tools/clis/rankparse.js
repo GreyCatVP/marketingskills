@@ -33,6 +33,7 @@ async function api(method, path, body) {
   }
   if (body) init.body = JSON.stringify(body)
   const res = await fetch(`${BASE_URL}${path}`, { ...init, signal: requestSignal() })
+  if (!res.ok) process.exitCode = 1
   const text = await res.text()
   try {
     return JSON.parse(text)
@@ -199,6 +200,7 @@ async function main() {
       }
   }
 
+  if (result?.error && rawArgs.length > 0) process.exitCode = 1
   console.log(JSON.stringify(result, null, 2))
 }
 
