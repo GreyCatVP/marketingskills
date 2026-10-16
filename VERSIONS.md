@@ -4,62 +4,178 @@ Current versions of all skills. Agents can compare against local versions to che
 
 | Skill | Version | Last Updated |
 |-------|---------|--------------|
-| ab-testing | 2.0.1 | 2026-10-08 |
-| ad-creative | 2.10.0 | 2026-10-08 |
-| ai-seo | 2.7.6 | 2026-10-08 |
-| analytics | 2.0.3 | 2026-10-08 |
+| ab-testing | 2.0.2 | 2026-10-12 |
+| ad-creative | 2.12.1 | 2026-10-15 |
+| ai-seo | 2.9.0 | 2026-10-15 |
+| analytics | 2.2.0 | 2026-10-15 |
 | aso | 2.0.2 | 2026-10-08 |
-| attribution | 1.1.4 | 2026-10-08 |
-| churn-prevention | 2.0.2 | 2026-10-08 |
-| co-marketing | 2.0.2 | 2026-10-02 |
+| attribution | 1.1.5 | 2026-10-12 |
+| churn-prevention | 2.0.3 | 2026-10-12 |
+| co-marketing | 2.0.3 | 2026-10-12 |
 | cold-email | 2.2.0 | 2026-10-07 |
 | community-marketing | 2.0.1 | 2026-08-23 |
 | competitor-profiling | 2.1.3 | 2026-10-07 |
 | competitors | 2.3.0 | 2026-10-01 |
 | content-strategy | 2.1.3 | 2026-10-07 |
-| copy-editing | 2.1.1 | 2026-10-07 |
-| copywriting | 2.1.0 | 2026-10-02 |
+| copy-editing | 2.2.0 | 2026-10-15 |
+| copywriting | 2.3.1 | 2026-10-15 |
 | cro | 2.0.3 | 2026-10-08 |
 | customer-research | 2.0.4 | 2026-10-02 |
 | directory-submissions | 2.1.1 | 2026-10-08 |
-| emails | 2.1.3 | 2026-10-08 |
+| emails | 2.1.4 | 2026-10-15 |
 | events | 1.0.0 | 2026-08-23 |
-| free-tools | 2.0.1 | 2026-08-23 |
+| free-tools | 2.0.2 | 2026-10-15 |
 | image | 2.0.2 | 2026-10-02 |
-| influencer-marketing | 1.1.2 | 2026-10-02 |
+| influencer-marketing | 1.4.0 | 2026-10-15 |
 | launch | 2.2.0 | 2026-10-07 |
 | lead-magnets | 2.1.0 | 2026-10-08 |
 | marketing-council | 1.0.0 | 2026-07-06 |
 | marketing-ideas | 2.0.1 | 2026-08-23 |
-| marketing-loops | 1.4.0 | 2026-10-07 |
-| marketing-plan | 1.2.1 | 2026-10-08 |
+| marketing-loops | 1.6.0 | 2026-10-15 |
+| marketing-plan | 1.2.2 | 2026-10-12 |
 | marketing-psychology | 2.0.0 | 2026-05-05 |
-| offers | 1.0.1 | 2026-08-23 |
-| onboarding | 2.0.1 | 2026-08-23 |
-| ads | 2.4.6 | 2026-10-08 |
+| offers | 1.0.2 | 2026-10-12 |
+| onboarding | 2.0.2 | 2026-10-12 |
+| ads | 2.6.1 | 2026-10-15 |
 | paywalls | 2.0.0 | 2026-05-05 |
 | popups | 2.0.0 | 2026-05-05 |
-| pricing | 2.1.3 | 2026-10-08 |
-| product-marketing | 2.1.0 | 2026-07-16 |
+| pricing | 2.1.4 | 2026-10-12 |
+| product-marketing | 2.2.0 | 2026-10-15 |
 | programmatic-seo | 2.1.0 | 2026-10-06 |
 | prospecting | 1.3.0 | 2026-10-08 |
 | public-relations | 1.2.0 | 2026-10-02 |
-| referrals | 2.2.0 | 2026-10-08 |
-| revops | 2.2.0 | 2026-10-08 |
+| referrals | 2.2.1 | 2026-10-12 |
+| revops | 2.2.1 | 2026-10-12 |
 | sales-enablement | 2.4.0 | 2026-10-07 |
 | schema | 2.0.2 | 2026-10-08 |
-| seo-audit | 2.2.0 | 2026-10-08 |
+| seo-audit | 2.2.1 | 2026-10-12 |
 | signup | 2.0.1 | 2026-10-08 |
 | site-architecture | 2.1.0 | 2026-10-06 |
 | sms | 1.1.0 | 2026-10-02 |
-| social | 2.3.3 | 2026-10-07 |
+| social | 2.4.0 | 2026-10-14 |
 | video | 2.2.1 | 2026-10-02 |
 
 ## Recent Changes
 
-### 2.11.27 (2026-10-10)
+### 2.11.38 (2026-10-15)
 
-- Validate alias dictionaries and segment filter object arrays with the documented 200-entry limit.
+- Validate OneSignal segment filter object arrays with the documented 200-entry limit, while preserving JSON alias dictionaries and comma-separated external IDs, including numeric-looking IDs.
+
+### 2.11.37 (2026-10-15)
+
+Copywriting and ads now read the learnings ledger added to product-marketing in 2.11.34.
+
+- **copywriting** (2.3.0 → 2.3.1): checks the context file's **Learnings** section before drafting, so tested angles and claims aren't proposed again as new.
+- **ads** (2.6.0 → 2.6.1): reads the context file's **Paid Ads** section (targets, floors, conversion definitions, approval boundaries) and its **Learnings** section before proposing tests.
+
+### 2.11.36 (2026-10-15)
+
+Newsletter sponsorships and partner link tracking, adapted from Wispr Flow's MIT skills in the skills.marketing library.
+
+- **influencer-marketing** (1.3.0 → 1.4.0): `references/newsletter-sponsorships.md` covers vetting a newsletter, reading earlier placements before booking again, skipping angles run on the same list in the last 30 days, placement specs, one file and one tracked link per placement, and reporting. Partner links now point to the UTM patterns in analytics.
+- **analytics** (2.1.0 → 2.2.0): UTM patterns by partner type (newsletter, creator, podcast, affiliate, community), plus the GA4 channel-group step that keeps those mediums out of Unassigned. One hyphenated naming convention with no personal data, examples fixed to match, and a note on traffic from AI assistants. The description no longer repeats its last sentence.
+
+### 2.11.35 (2026-10-15)
+
+Copy skills now diagnose what they were handed before changing it, adapted with credit from Profound's and Wispr Flow's MIT copy skills.
+
+- **copywriting** (2.2.0 → 2.3.0): new **Diagnose the Situation First** section. Blank or slop input gets rebuilt from the brief, a draft with a real voice gets restored in that voice, and a point edit changes only what was asked. It reads taste from the input (vocabulary, emphasis, scope, angle). A drafting protocol adds decompose-and-lock, a three-question gate (can the reader picture it, can it be proven, could a competitor write it), rationed punch, and a leave-it-alone test. `references/ai-tells.md` adds second-generation tells that survive a first cleanup (wisdom-shaped sentences, performed cleverness, perfect balance, omniscient casual, self-narration, tidy closers) and a build-a-writer step, with a rule against inventing anecdotes or customers. Diagnosis mirrored in the description. New eval (id 10).
+- **copy-editing** (2.1.1 → 2.2.0): pick the edit mode before editing. A point edit skips the Seven Sweeps, changes only what was asked, and returns just the changed lines with reasons. Detail in `references/checklist.md`. Rule mirrored in the description. New eval (id 9).
+
+### 2.11.34 (2026-10-15)
+
+Brand voice built from evidence, a learnings ledger that drafting skills read, and two new loops. Voice and session-end patterns adapted with credit from Wispr Flow's MIT-licensed skills.
+
+- **product-marketing** (2.1.0 → 2.2.0): `references/brand-voice.md` builds the voice profile from copy that performed and the founder's own writing: attributes with what each does and doesn't mean, tone by context (support, launch, errors, sales, social, billing), before/after examples, brand word lists, and per-person voice guides. The context doc gains an optional **Paid Ads** section (margin-based targets, hard floors, conversion truth, what the agent may change) and a **Learnings** table with promotion and retirement rules.
+- **marketing-loops** (1.5.0 → 1.6.0): an AI-answer accuracy audit loop (claims ledger with verdicts and severity, fix the source page first) and a weekly ads-check loop that ends each account in HOLD, FIX, TEST, or INVESTIGATE. Loop runs now close with a session-end step that logs 1–3 decisions and proposes learnings for approval; campaign postmortems feed the ledger. The catalog now has 58 loops.
+- **emails** (2.1.3 → 2.1.4) and **ad-creative** (2.12.0 → 2.12.1): read the Learnings section before drafting.
+
+### 2.11.33 (2026-10-15)
+
+Account checks that end in a decision, and Meta's official Ads MCP.
+
+- **ads** (2.5.0 → 2.6.0): the weekly review becomes an ordered operating check (spend, traffic, conversions, creative, landing page, tracking) that ends in exactly one call: HOLD, FIX, TEST, or INVESTIGATE. A Friday stakeholder readout under 200 words closes the week (`references/operating-check.md`). Every recommendation now ends with facts, hypotheses, and missing data, with unavailable inputs labeled MISSING. The Google audit adds deep dives for conversion signals (which actions train the bidder) and wasted-spend negatives (safe now vs check first, with spend saved). PMax guardrails add Optmyzr's 2025 Search/PMax overlap finding.
+- **Tools:** Meta Ads now lists its official MCP server (`mcp.facebook.com/ads`, open beta since 2026-04-29) with read-only-first setup. The registry, Composio guidance, and AGENTS.md no longer route Meta through Composio by default.
+
+### 2.11.32 (2026-10-15)
+
+AI search measurement for ai-seo, adapted with credit from Profound's MIT-licensed AEO skills and labeled as vendor research.
+
+- **ai-seo** (2.8.0 → 2.9.0): four new references. `answer-accuracy.md` is a claim ledger for what AI says about you, with seven verdicts, source tracing, severity, and a fix-the-source workflow. `prompt-portfolio.md` covers intent families, stable/exploratory/control cohorts, versioning, run cadence by portfolio size, and multi-turn buying journeys. `ai-attribution.md` measures exposure, immediate, delayed, and business layers with 1-hour, 24-hour, and 7-day windows and names the evaluation design behind each claim. `multilingual-and-commerce.md` adds a per-language AEO checklist and a fit check for AI shopping surfaces. Citations-vs-recommendations gains a citation-mix taxonomy with channel rules; agent-defaults gains a docs audit for coding agents (task-to-page map, technical fact ledger); content-patterns gains a fact-family fan-out matrix. SKILL.md adds an evidence-order rule and replaces the "third-party sources matter more than your own site" claim with the measured citation mix. Stat cleanup: SE Ranking, Profound, and BrightEdge figures now carry sources and dates; the ZipTie attribution is corrected to Sellm.io; the 40/35/25 split, the 3.2x freshness multiplier, and the 30–40% schema lift are cut as unverifiable.
+
+### 2.11.31 (2026-10-15)
+
+- Replace unsourced tool conversion benchmarks with sourced examples and evidence-aware evaluation, preserving practical case lessons.
+
+### 2.11.30 (2026-10-14)
+
+Lessons from Railway's agent-first growth, Wispr Flow's creator ad program, and recent hook and X-listening threads, added to existing skills.
+
+- **ai-seo** (2.7.6 → 2.8.0): `references/agent-defaults.md` covers products an agent installs mid-task. It explains how to measure which vendor Claude Code, Cursor, and Codex pick per stack, which stall points to fix, and the levers that move the default (no-signup provisioning, agent setup, per-stack task pages, migration guides). It also rules out agent-facing instructions that tell agents to choose you.
+- **influencer-marketing** (1.2.0 → 1.3.0): `references/paid-ads-creator-program.md` covers creators paid a share of the ad spend behind their videos. It includes rate math, the guaranteed monthly minimum, recruiting a small cohort, staged growth with a cap, coaching, and four-part briefs.
+- **ads** (2.4.7 → 2.5.0): the Meta playbook adds creator ads at volume. Near-identical ads get clustered, so plan by concept, angle, and awareness level, optimize for a quality event, and test the funnel in Instagram's in-app browser. AI variant farming now notes that close variants count as one concept. LinkedIn retargeting is now sequenced by behavior.
+- **ad-creative** (2.11.0 → 2.12.0): the hook system adds the contrast family (choice, old vs. new, us vs. them, false assumption, declaration then question) and how it differs from the "it's not X, it's Y" AI tell.
+- **social** (2.3.4 → 2.4.0): contrast hooks in the short-form library, and X-through-Grok jobs in the listening reference.
+- **marketing-loops** (1.4.0 → 1.5.0): agent-default check, niche-outlier, creator-scouting, and launch-reaction loops. The catalog now has 56 loops.
+
+### 2.11.29 (2026-10-13)
+
+CLI and tooling fixes from @rudycelekli, each checked against the vendor's current docs.
+
+- **Request deadlines** (#751): HTTP calls in 65 CLIs now time out instead of hanging. The default is 120 seconds, raised from #751's 30 so long scrapes and exports aren't cut off; override it with `--timeout-ms`.
+- **Mixpanel regions** (#744): US, EU, and India ingestion, query, and export hosts.
+- **Payload validation before sending:** the CLIs now reject inputs the vendor's API would refuse anyway. Valid empty and nested values still pass.
+  - Amplitude event properties (#801)
+  - SendGrid dynamic template data (#803)
+  - Kit custom fields (#806)
+  - Segment properties and traits (#808)
+  - Customer.io data objects (#811)
+  - Mixpanel properties (#813)
+  - Resend batch size (#816) and template variables (#828)
+  - OneSignal conflicting audiences (#818)
+  - Intercom event metadata (#822)
+  - Dub bulk link limits (#824)
+  - Pendo aggregation envelopes (#830)
+- **Correctness:** Close opportunity amounts keep exact integers instead of truncating (#831).
+  - Interface change: `amplitude --properties ''` now errors instead of being ignored (#801).
+- **Tooling:**
+  - Packaging checks file sizes before loading them (#804).
+  - The README sync handles Windows line endings (#805).
+  - `check-versions` catches orphaned nested references and broken sibling links (#807).
+
+### 2.11.28 (2026-10-12)
+
+Skill fixes from @rudycelekli. A reviewer recomputed every calculation, and the guidance stays firm where a change would otherwise have hedged it.
+
+- **Math:**
+  - **offers** (1.0.1 → 1.0.2): multiply sequential lifts rather than adding them (#809).
+  - **churn-prevention** (2.0.2 → 2.0.3): dunning ROI stated net of tooling, at 5–14x (#810). Health scores put every signal on one 0–100 scale and handle missing signals explicitly (#829).
+  - **co-marketing** (2.0.2 → 2.0.3): marketplace fees are recurring costs, not CAC, and Arrows is listed on the HubSpot Marketplace (#812).
+  - **referrals** (2.2.0 → 2.2.1): program return measured after serving costs (#820).
+  - **ab-testing** (2.0.1 → 2.0.2): test duration accounts for the number of arms and exposure (#819).
+- **Methods:**
+  - **attribution** (1.1.4 → 1.1.5): intent-to-treat analysis vs. on-off tests, and an interval that includes zero is not a win (#815).
+  - **revops** (2.2.0 → 2.2.1): calibrate scoring on snapshots taken at decision time and on holdouts (#817).
+  - **pricing** (2.1.3 → 2.1.4): the direction of the Van Westendorp "too cheap" curves (#821).
+  - **onboarding** (2.0.1 → 2.0.2): early activation measured separately from mature retention (#826). Card-required trials judged on visitor→paid, with ChartMogul's ~30% trial→paid (over 5x no-card) as context (#827).
+- **Platform facts:**
+  - **seo-audit** (2.2.0 → 2.2.1): hreflang findings scoped to the affected pairs, and x-default treated as optional (#823).
+  - **ads** (2.4.6 → 2.4.7): screen headlines in Meta, then prove the winner with a landing-page test, without the made-up lift thresholds (#825).
+
+### 2.11.27 (2026-10-12)
+
+- **Analysis rules from the Magister benchmark** (#573). Four rules, each written into the skill and mirrored in its description so hosted agents see them before opening the file:
+  - **ad-creative** (2.10.0 → 2.11.0): a new Test Hypotheses That Can Lose section. A hypothesis names the metric, the comparison, and the expected direction.
+  - **copywriting** (2.1.0 → 2.2.0): claims must be supportable, and a declined claim names the evidence that would unlock it.
+  - **analytics** (2.0.3 → 2.1.0): compute metrics from row-level data, and divide rates only over matching closed windows.
+  - **marketing-plan** (1.2.1 → 1.2.2): AARRR stage metrics count only cohorts whose window has closed.
+
+  ad-creative also notes that Magister can run its data-pull step (#567), with a disclosure that Magister is the maintainer's product and alternatives for running the pull yourself.
+- **influencer-marketing** (1.1.2 → 1.2.0) and **social** (2.3.3 → 2.3.4): Telegram channel ads (#785 by @Courier-Britva). The new `references/telegram-channels.md` covers how placements are bought, a seven-check vetting routine based on views per subscriber, and pricing by CPM and deletion window. Contributed by the team behind TGScope, which is disclosed; its benchmarks come from TGScope's own studies and are labeled as directional.
+- **Tools:**
+  - **rowbound** guide (#500, closes #498): an open-source, self-hosted alternative to Clay that runs enrichment waterfalls from a Google Sheet, with a CLI and MCP.
+  - **AIsa** joins as a ◆ Skill Partner in SEO tools (#783).
+  - Across the CLIs, rejected HTTP requests now exit 1 (#713), and invalid flags fail with structured errors before any request is sent (#732), both by @rudycelekli.
 
 ### 2.11.26 (2026-10-08)
 
