@@ -8,9 +8,9 @@ function run(kind,value,preview=false){
  const source=`global.fetch=async(url,opts)=>{process.stderr.write('FETCH_CALLED');return {status:200,text:async()=>JSON.stringify({body:JSON.parse(opts.body),headers:opts.headers})}};process.argv=['node',${JSON.stringify(cli)},...${JSON.stringify(args)}];require(${JSON.stringify(cli)})`
  return spawnSync(process.execPath,['-e',source],{encoding:'utf8',env:{...process.env,ONESIGNAL_REST_API_KEY:'fixture-key',ONESIGNAL_APP_ID:'fixture-app'},timeout:5000})
 }
-test('rejects invalid alias dictionaries before delivery or preview',()=>{
- for(const value of ['null','[]','true','42','"text"'])for(const preview of [false,true]){
-  const r=run('aliases',value,preview);assert.equal(r.status,1,r.stdout);assert.equal(r.stderr.includes('FETCH_CALLED'),false);assert.match(JSON.parse(r.stderr).error,/aliases.*JSON object/)
+test('preserves JSON-scalar-looking external IDs in delivery and preview',()=>{
+ for(const value of ['12345','null','[]','true','42','"text"'])for(const preview of [false,true]){
+  const r=run('aliases',value,preview);assert.equal(r.status,0,r.stderr);assert.deepEqual(JSON.parse(r.stdout).body.include_aliases,{external_id:[value]});assert.equal(r.stderr.includes('FETCH_CALLED'),!preview)
  }
 })
 test('rejects invalid segment filter arrays and counts before requests',()=>{

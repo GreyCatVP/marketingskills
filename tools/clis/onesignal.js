@@ -102,7 +102,7 @@ async function main() {
               payload.include_aliases = { external_id: args.aliases.split(',') }
             }
             if (!payload.include_aliases || typeof payload.include_aliases !== 'object' || Array.isArray(payload.include_aliases)) {
-              throw new Error('--aliases must be a JSON object or comma-separated external IDs')
+              payload.include_aliases = { external_id: args.aliases.split(',') }
             }
           } else {
             payload.included_segments = ['Subscribed Users']
