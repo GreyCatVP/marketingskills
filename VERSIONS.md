@@ -34,7 +34,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | marketing-council | 1.0.0 | 2026-07-06 |
 | marketing-ideas | 2.0.1 | 2026-08-23 |
 | marketing-loops | 1.6.1 | 2026-10-15 |
-| marketing-plan | 1.2.2 | 2026-10-12 |
+| marketing-plan | 1.2.3 | 2026-10-21 |
 | marketing-psychology | 2.0.0 | 2026-05-05 |
 | offers | 1.0.2 | 2026-10-12 |
 | onboarding | 2.0.2 | 2026-10-12 |
@@ -58,6 +58,10 @@ Current versions of all skills. Agents can compare against local versions to che
 | video | 2.2.1 | 2026-10-02 |
 
 ## Recent Changes
+
+### 2.13.1 (2026-10-21)
+
+- **marketing-plan** (1.2.2 → 1.2.3): require verified private repository visibility and explicit client authorization before sharing a client plan on GitHub. Keep plans local when either condition is unmet. Add publication safety evals (part of #856).
 
 ### 2.13.0 (2026-10-19)
 
