@@ -46,7 +46,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | programmatic-seo | 2.1.0 | 2026-10-06 |
 | prospecting | 1.3.0 | 2026-10-08 |
 | public-relations | 1.2.1 | 2026-10-15 |
-| referrals | 2.2.1 | 2026-10-12 |
+| referrals | 2.2.2 | 2026-10-21 |
 | revops | 2.2.1 | 2026-10-12 |
 | sales-enablement | 2.4.0 | 2026-10-07 |
 | schema | 2.0.2 | 2026-10-08 |
@@ -58,6 +58,11 @@ Current versions of all skills. Agents can compare against local versions to che
 | video | 2.2.1 | 2026-10-02 |
 
 ## Recent Changes
+
+### 2.13.1 (2026-10-21)
+
+- **referrals** (2.2.1 → 2.2.2): LinkJolt added to the Tool Integrations table, beside Rewardful and Tolt.
+- **LinkJolt integration guide** (`tools/integrations/linkjolt.md`) and registry rows (Tool Index, Referral & Affiliate). Contributed by LinkJolt's founder (the tool's maker, disclosed in the guide); not a Verified Partner. The existing agent recommendation is unchanged.
 
 ### 2.13.0 (2026-10-19)
 
