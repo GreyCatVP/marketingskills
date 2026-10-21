@@ -59,6 +59,10 @@ Current versions of all skills. Agents can compare against local versions to che
 
 ## Recent Changes
 
+### 2.13.1 (2026-10-21)
+
+- Return a failure exit status for HTTP-rejected requests in the remaining 33 CLI transports, preserving provider diagnostics and stopping rejected OAuth responses before resource requests.
+
 ### 2.13.0 (2026-10-19)
 
 - Added the **`conversion-tracking`** skill (1.0.0). Setting up, auditing, verifying and fixing the path from a conversion on a website to Google Ads, Meta, GA4, LinkedIn, TikTok and Microsoft Ads, for lead generation and ecommerce. Gives an orphaned job a home. Analytics listed conversion tracking as a trigger without covering it, attribution routed pixels and CAPI to ads, and ads held one reference file. Built on one distinction, that lead gen has to infer success from a browser signal while ecommerce reads it from an order record. Nine references (how each form, booking and chat tool signals success, the complete browser-side path, the server-side options with prices, ecommerce platforms including Shopify's 26 Aug 2026 Additional Scripts removal, Google Ads, Meta, other platforms, the audit playbook, and why the numbers never match), 26 detection snippets (22 form and booking tools plus 4 universal patterns), importable GTM recipes merged by `scripts/build_recipe.py`, and 16 evals. Audit scoring follows the ads skill's audit guardrails, summarised inline. New skill = repo y release; total skills: 52. Contributed by Aaron Beashel (Converly ◆, a Verified Partner) and reviewed against the repo's partner-integrity bar before merge:
