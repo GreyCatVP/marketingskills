@@ -93,6 +93,113 @@
         "Preserves prior changelog entries unchanged"
       ],
       "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Load the context for [SVN] before we start on this month's blog posts.",
+      "expected_output": "Load mode. Reads bml/context-rules.md. Resolves SVN Woods via the Client Index and finds the Client Operations doc by name. Fetches page 13, confirms Status: GENERATED, and compares source page dates with the Source versions table. Adds a page 00 scope summary and the client's segment, flags volatile facts older than 90 days, and stages .agents/product-marketing.md with a 'Generated for [SVN]' first line. Writes nothing to ClickUp and reports the page 13 date, freshness and ★ gaps in a few lines.",
+      "assertions": [
+        "Chooses Load mode",
+        "Reads bml/context-rules.md",
+        "Resolves the client through the Client Index and Client Operations doc",
+        "Checks page 13 status and staleness against source page dates",
+        "Adds scope summary from page 00 and the segment",
+        "Stages .agents/product-marketing.md with a 'Generated for [SVN]' first line",
+        "Does not write to ClickUp or edit page 13"
+      ],
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Load [ORO] context. (Page 09 was edited yesterday; page 13 was generated last week.)",
+      "expected_output": "Load mode. Detects that page 09 is newer than page 13's Source versions entry, reports page 13 as stale in one line, re-reads the cited rows on page 09 for the sections the task will use, and lets the source page win. Recommends regenerating page 13 with client-context-builder. Does not patch page 13.",
+      "assertions": [
+        "Detects page 13 is stale",
+        "Says so in one line",
+        "Re-reads cited rows on the newer source page",
+        "Treats the source page as authoritative",
+        "Recommends client-context-builder Generate 13",
+        "Does not edit page 13"
+      ],
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "Now load [INT]. (The staged .agents/product-marketing.md currently starts with 'Generated for [KEY]'.)",
+      "expected_output": "Load mode. Reads the staged file's first line, sees it belongs to KEY, and replaces it entirely with INT's context. Never merges two clients' context.",
+      "assertions": [
+        "Reads the first line of the existing staged file",
+        "Recognizes it belongs to another client",
+        "Replaces the file rather than merging",
+        "Stages INT's page 13 with a 'Generated for [INT]' line"
+      ],
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "Update [SVN]'s ICP — George says they now want to target medical office building owners too.",
+      "expected_output": "Load mode, Step 7 (change request). Does not edit .agents/product-marketing.md, the rows or page 13. Names the rows affected (e.g. C-1/C-3 on page 03, E-5 on page 09) and quotes what's on file. Drafts one context task per change with current answer, proposed answer, the client's words and a source link, and creates them only after the user approves. Notes that client-context-builder's monthly conflict check will turn approved tasks into row changes and regenerate page 13.",
+      "assertions": [
+        "Refuses to hand-edit the staged file, rows or page 13",
+        "Names the affected row IDs and quotes what's on file",
+        "Drafts context tasks with current and proposed answers and a source",
+        "Creates nothing before the user approves",
+        "Points to client-context-builder for row changes and regeneration"
+      ],
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "We're pitching a dental practice in Maryville next week. Can you run intake on them so we walk in prepared?",
+      "expected_output": "Intake mode. Confirms name, website, locations, segment (clinical) and priority services, using a prospect slug. Researches the website, Google Business Profile, reviews and listings to draft rows with Research:/Benchmark: sources, and runs bml/local-market-research.md for the L rows. Never drafts belief (F) or guardrail (J) rows from research. Prepares interview questions by question-bank ID, ★ first, plus clinical add-ons (insurance, providers, referral sources, patient authorization). Writes prospect-<name>_Intake_Review_YY.MM.DD.md marked NOT WRITTEN TO CLICKUP, with rows, proposed new rows, still-open ★ rows, a call agenda and fix-now findings. May stage an 'INTAKE DRAFT' context file for pitch work.",
+      "assertions": [
+        "Chooses Intake mode",
+        "Identifies the clinical segment",
+        "Runs the public research pass and the local market research procedure",
+        "Labels every research row Research: or Benchmark: and keeps it DRAFT",
+        "Does not draft F or J rows from research",
+        "Includes clinical segment add-on questions",
+        "Writes the review file in the miner's format and does not write to ClickUp",
+        "Any staged context file is marked INTAKE DRAFT"
+      ],
+      "files": []
+    },
+    {
+      "id": 13,
+      "prompt": "Load context for [GSS]. (GSS has pages 00–06 but no pages 07–13.)",
+      "expected_output": "Load mode. Finds no page 13 and no question-bank pages. Stages only the scope summary, segments and a gaps list naming the missing pages, with an 'UNGENERATED for [GSS]' first line. Recommends adding pages 07–12, running client-context-miner Backfill, then client-context-builder Generate 13. Does not invent facts to fill missing sections.",
+      "assertions": [
+        "Detects missing page 13 and pages 07–12",
+        "Uses the UNGENERATED first line",
+        "Stages only scope, segments and gaps",
+        "Recommends miner Backfill and builder Generate 13",
+        "Does not invent facts"
+      ],
+      "files": []
+    },
+    {
+      "id": 14,
+      "prompt": "Set up our product marketing context.",
+      "expected_output": "The request doesn't say whether this is for a BML client, a prospect, or BML itself. Asks that one question before choosing Load, Intake or Self mode.",
+      "assertions": [
+        "Recognizes the mode is ambiguous",
+        "Asks whether it's for a BML client, a prospect, or BML itself",
+        "Does not start a workflow before the answer"
+      ],
+      "files": []
+    },
+    {
+      "id": 15,
+      "prompt": "Load context for [PWC-TN]. (PetWellClinic TN is one location of a multi-location veterinary brand; the corporate space holds voice, beliefs and guardrails.)",
+      "expected_output": "Load mode. Lists both the clinical and multi-location segments. Loads the parent brand's voice, beliefs and guardrails rows, then the TN location's own rows; location rows win only for local facts. Applies franchisor rules (J-3) and clinical rules. Puts hours, providers and other volatile facts in a separate 'Volatile facts — confirm before publishing' block and keeps page 13 text verbatim.",
+      "assertions": [
+        "Lists more than one segment",
+        "Merges parent brand rows with location rows",
+        "Location rows win only for local facts",
+        "Volatile facts go in their own block",
+        "Page 13 text is not altered"
+      ],
+      "files": []
     }
   ]
 }
