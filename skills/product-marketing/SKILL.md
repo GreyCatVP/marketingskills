@@ -28,7 +28,7 @@ You create, load and maintain the product marketing context document at `.agents
 
 For Load and Intake, read `../../bml/context-rules.md` (relative to this skill's folder) first. It defines row status, guardrails, segments, change requests and the footer every skill uses.
 
-**Never hand-edit client context.** For a BML client, page 13 in ClickUp is the record, generated from question-bank rows by `client-context-builder`. A request to change a client's positioning, ICP or any other fact is a change request (Load, Step 7), never an edit to the staged file or to page 13.
+**Never hand-edit client context.** For a BML client, page 13 in ClickUp is the record, generated from question-bank rows by `client-context-builder`. A request to change a client's positioning, ICP or any other fact is a change request (Load, Step 7), never an edit to the staged file or to page 13. The upstream **Learnings** section and "Maintaining Learnings" below apply to Self mode only: for a client, a proposed learning becomes a `context` task (Load, Step 7), and no skill adds rows, changelog lines or version bumps to the staged file.
 
 ---
 

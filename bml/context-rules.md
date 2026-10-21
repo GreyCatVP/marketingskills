@@ -33,7 +33,9 @@ Client context lives in the client's ClickUp space, in the `Client Operations` d
 
 **If the staged file is missing, or its header names a different client:** run `product-marketing` in Load mode before continuing. Never carry one client's context into another client's work.
 
-**Never edit `.agents/product-marketing.md` for a BML client.** If a skill offers to update the context file, decline. Changes go to rows (section 8).
+**Never change page 13 or `.agents/product-marketing.md` for a BML client.** No skill writes to either, for any reason. If a skill offers to update the context file, log a learning, add a changelog line or bump its version, decline. Changes go to rows (section 8).
+
+**Learnings ledger.** Upstream skills keep a `Learnings` table in the context file and offer to add rows to it. For a BML client, page 13 is the only source of learnings: read its Learnings section if it has one, and treat a missing one as normal, not as a gap to fill. A finding that would earn a learning (a test result, a decision with a reason, a repeated correction) becomes a `context` task under section 8.
 
 ## 2. Row status
 
@@ -131,7 +133,7 @@ When a client edits, rejects or comments on a deliverable, or anyone asks to cha
 1. Compare BML's version with the client's and list each meaningful change.
 2. Name the row each change touches (or "no row") and a category: tone, accuracy, seriousness, belief, claim.
 3. Draft one task per change, tagged `context`, named `Context — <CODE> — <row ID> — <short>`, with before/after, the client's words and the source link. Create it only after the user approves.
-4. Never edit the row or page 13 directly. The monthly conflict check in `client-context-builder` classifies the change and drafts row edits for approval.
+4. Never edit the row or page 13 directly, and never add a Learnings entry to the staged file. The monthly conflict check in `client-context-builder` classifies the change and drafts row edits for approval.
 
 ## 9. Context footer
 
