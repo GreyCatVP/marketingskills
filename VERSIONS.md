@@ -42,7 +42,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | paywalls | 2.0.0 | 2026-05-05 |
 | popups | 2.0.0 | 2026-05-05 |
 | pricing | 2.1.4 | 2026-10-12 |
-| product-marketing | 2.2.0 | 2026-10-15 |
+| product-marketing | 2.2.0-bml.1 | 2026-10-21 |
 | programmatic-seo | 2.1.0 | 2026-10-06 |
 | prospecting | 1.3.0 | 2026-10-08 |
 | public-relations | 1.2.1 | 2026-10-15 |
@@ -58,6 +58,11 @@ Current versions of all skills. Agents can compare against local versions to che
 | video | 2.2.1 | 2026-10-02 |
 
 ## Recent Changes
+
+### 2.13.0-bml.1 (2026-10-21) — Baker Labs fork
+
+- **Upstream sync** (2.11.1 → 2.13.0): merged 799 upstream commits. BML blocks unchanged. product-marketing rebased to 2.2.0-bml.1 (upstream added brand-voice extraction, a Paid Ads section and a Learnings ledger; the BML modes still run ahead of the upstream workflow).
+- **product-marketing** (2.2.0 → 2.2.0-bml.1): adds BML client modes ahead of the upstream workflow, kept between `<!-- BML:START modes -->` / `<!-- BML:END modes -->` markers so upstream changes merge cleanly. **Load** stages a BML client's generated page 13 (ClickUp `Client Operations`) into `.agents/product-marketing.md` with a page 00 scope summary, the client's segment, parent-brand merging for multi-location clients, staleness checks and volatile-fact flags; it never hand-edits client context. **Intake** researches a prospect or new client's public footprint and local market, interviews by Master Question Bank ID with segment add-ons, and writes a review file in `client-context-miner`'s format (nothing written to ClickUp). **Self** keeps the upstream workflow for BML's own marketing, with small additions for service businesses (service area, trigger events, referrers, capacity). New shared files: `bml/context-rules.md` (row status, scope gate, claims and `[NEEDS PROOF]`, guardrails, distinctiveness, segment rules, feedback, context footer) and `bml/local-market-research.md` (procedure for the L rows). Evals 8–15 cover Load, stale page 13, wrong-client file, a client change request, prospect intake, missing page 13, an ambiguous request and a multi-location clinical client.
 
 ### 2.13.0 (2026-10-19)
 
