@@ -6,13 +6,13 @@ Current versions of all skills. Agents can compare against local versions to che
 |-------|---------|--------------|
 | ab-testing | 2.0.2 | 2026-10-12 |
 | ad-creative | 2.12.1 | 2026-10-15 |
-| ai-seo | 2.10.1 | 2026-10-19 |
+| ai-seo | 2.10.2 | 2026-10-22 |
 | analytics | 2.2.1 | 2026-10-19 |
 | aso | 2.0.2 | 2026-10-08 |
 | attribution | 1.1.6 | 2026-10-19 |
 | churn-prevention | 2.0.3 | 2026-10-12 |
 | co-marketing | 2.0.3 | 2026-10-12 |
-| cold-email | 2.2.0 | 2026-10-07 |
+| cold-email | 2.2.1 | 2026-10-22 |
 | community-marketing | 2.0.1 | 2026-08-23 |
 | competitor-profiling | 2.1.4 | 2026-10-15 |
 | competitors | 2.3.0 | 2026-10-01 |
@@ -23,7 +23,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | cro | 2.0.3 | 2026-10-08 |
 | customer-research | 2.0.4 | 2026-10-02 |
 | directory-submissions | 2.1.2 | 2026-10-15 |
-| emails | 2.1.4 | 2026-10-15 |
+| emails | 2.1.5 | 2026-10-22 |
 | events | 1.0.0 | 2026-08-23 |
 | free-tools | 2.0.3 | 2026-10-15 |
 | image | 2.0.2 | 2026-10-02 |
@@ -38,19 +38,19 @@ Current versions of all skills. Agents can compare against local versions to che
 | marketing-psychology | 2.0.0 | 2026-05-05 |
 | offers | 1.0.2 | 2026-10-12 |
 | onboarding | 2.0.2 | 2026-10-12 |
-| ads | 2.6.2 | 2026-10-19 |
-| paywalls | 2.0.0 | 2026-05-05 |
+| ads | 2.6.3 | 2026-10-22 |
+| paywalls | 2.0.1 | 2026-10-22 |
 | popups | 2.0.0 | 2026-05-05 |
 | pricing | 2.1.4 | 2026-10-12 |
 | product-marketing | 2.2.0 | 2026-10-15 |
-| programmatic-seo | 2.1.0 | 2026-10-06 |
-| prospecting | 1.3.0 | 2026-10-08 |
+| programmatic-seo | 2.1.1 | 2026-10-22 |
+| prospecting | 1.3.1 | 2026-10-22 |
 | public-relations | 1.2.1 | 2026-10-15 |
 | referrals | 2.2.1 | 2026-10-12 |
 | revops | 2.2.1 | 2026-10-12 |
 | sales-enablement | 2.4.0 | 2026-10-07 |
 | schema | 2.0.2 | 2026-10-08 |
-| seo-audit | 2.2.2 | 2026-10-15 |
+| seo-audit | 2.2.3 | 2026-10-22 |
 | signup | 2.0.1 | 2026-10-08 |
 | site-architecture | 2.1.0 | 2026-10-06 |
 | sms | 1.1.0 | 2026-10-02 |
@@ -58,6 +58,17 @@ Current versions of all skills. Agents can compare against local versions to che
 | video | 2.2.1 | 2026-10-02 |
 
 ## Recent Changes
+
+### 2.13.1 (2026-10-22)
+
+- **ai-seo** (2.10.1 → 2.10.2): the Princeton GEO table now matches the paper's Table 1 (GEO-bench, position-adjusted word count): quotations +41%, statistics +31%, fluency +28%, cite sources +27%, technical terms +18%, easy-to-understand +14%, authoritative +10%, unique words +6%, keyword stuffing −8%. The 115% figure now states its scope (a 5th-ranked site) and the 30% loss for top-ranked sites. Search Console guidance now points to the Generative AI performance report (impressions only for AI Overviews and AI Mode, all sites since 2026-08-31), as Google's AI optimization guide does. `references/content-patterns.md`: the statistics figure matches the paper, and the three examples with invented-looking numbers and quotes are marked illustrative. The 40-60 word passage rule is labelled a heuristic. `references/platform-ranking-factors.md`: ChatGPT's search backend described from OpenAI's help center (own crawler plus unnamed third-party providers) instead of "a Bing-based index"; Claude's Brave use described from Anthropic's subprocessor list and independent tests, not as its only source; Perplexity's curated domain lists and time decay marked as unconfirmed third-party analysis.
+- **seo-audit** (2.2.2 → 2.2.3): Mobile-Friendly Test (retired December 2023) replaced with the Lighthouse mobile audit. `references/rankings-push.md` warns about the Search Console logging error that inflated impressions, CTR and position from 2025-05-13 to 2026-04-27 (clicks unaffected, no backfill).
+- **programmatic-seo** (2.1.0 → 2.1.1): the subfolder advice no longer says subdomains "split" authority, which contradicted the Mueller quote in seo-audit's international-seo reference; it now gives the operational reasons to prefer subfolders.
+- **ads** (2.6.2 → 2.6.3): creative guidance drops the 20% text rule Meta retired in 2020. `references/platform-setup-checklists.md` drops the Aggregated Event Measurement and top-8 event steps (cap dropped May 2023, AEM tab removed 2025), matching conversion-tracking. The unsourced "85% watch without sound" figure is replaced with the mechanism (feed video autoplays muted).
+- **paywalls** (2.0.0 → 2.0.1): the escape hatch no longer assumes a free plan; paid-only products still need a visible way back.
+- **emails** (2.1.4 → 2.1.5): `references/copy-guidelines.md` drops the 20-40% open-rate benchmark, which Apple Mail Privacy Protection has inflated since 2021, and says to track opens as a trend within one list.
+- **cold-email** (2.2.0 → 2.2.1): `references/benchmarks.md` puts legality before tone for DACH: Germany and Austria require prior consent for advertising email, B2B included, pointing to prospecting's compliance reference.
+- **prospecting** (1.3.0 → 1.3.1): `references/compliance.md` adds Austria (TKG 2021 §174: consent required for business recipients too; the existing-customer exception never covers cold outreach) and includes it in the country-gating checklist.
 
 ### 2.13.0 (2026-10-19)
 
