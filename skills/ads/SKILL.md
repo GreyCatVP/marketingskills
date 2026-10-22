@@ -200,7 +200,7 @@ Meta's Andromeda algorithm (2025) made creative volume and variety the main leve
 4. CTA (20-30 sec): Clear next step
 
 **Production tips:**
-- Captions always (85% watch without sound)
+- Captions always (feed video usually autoplays muted)
 - Vertical for Stories/Reels, square for feed
 - Native feel outperforms polished
 - First 3 seconds determine if they watch

@@ -217,7 +217,7 @@ For detailed templates for each block type, see [references/content-patterns.md]
 
 **Structural rules:**
 - Lead every section with a direct answer (don't bury it)
-- Keep key answer passages to 40-60 words (optimal for snippet extraction)
+- Keep key answer passages short (40-60 words is a common heuristic; no study has measured an optimum)
 - Use H2/H3 headings that match how people phrase queries
 - Tables beat prose for comparison content
 - Numbered lists beat paragraphs for process content
