@@ -10,6 +10,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | analytics | 2.2.1 | 2026-10-19 |
 | aso | 2.0.2 | 2026-10-08 |
 | attribution | 1.1.6 | 2026-10-19 |
+| caveman-marketing | 1.0.0 | 2026-10-23 |
 | churn-prevention | 2.0.3 | 2026-10-12 |
 | co-marketing | 2.0.3 | 2026-10-12 |
 | cold-email | 2.2.0 | 2026-10-07 |
@@ -58,6 +59,10 @@ Current versions of all skills. Agents can compare against local versions to che
 | video | 2.2.1 | 2026-10-02 |
 
 ## Recent Changes
+
+### 2.14.0 (2026-10-23)
+
+- Added caveman-marketing (1.0.0): simplify existing ad, landing-page and signup screens while retaining factual claims. Includes a local word and button checker. Contributed by the 5dive team, which built the source skill.
 
 ### 2.13.0 (2026-10-19)
 
